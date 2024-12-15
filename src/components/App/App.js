@@ -2,6 +2,7 @@
 import React, { useState } from 'react'; // Added useState import
 import './App.css';
 import SearchBar from '../SearchBar/SearchBar';
+import Spotify from '../../utilities/Spotify'; // Import Spotify module
 import SearchResults from '../SearchResults/SearchResults';
 import Playlist from '../Playlist/Playlist';
 
@@ -47,13 +48,16 @@ function App() {
       );
     };
 
-
+    const search = (term) => {
+      // Use the Spotify module to perform a search
+      Spotify.search(term).then((results) => setSearchResults(results));
+    };
 
   return (
     <div className="App">
       <h1>Jammming</h1>
       <div className="App-content">
-        <SearchBar />
+        <SearchBar onSearch={search}/>
         <div className="App-main">
           <SearchResults searchResults={searchResults} onAdd={addTrack}/>
           <Playlist
