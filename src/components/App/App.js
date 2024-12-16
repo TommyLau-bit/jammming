@@ -8,28 +8,25 @@ import Playlist from '../Playlist/Playlist';
 
 function App() {
    // eslint-disable-next-line
-  const [searchResults, setSearchResults] = useState([
-    { id: 1, name: 'Song A', artist: 'Artist A', album: 'Album A', uri: 'spotify:track:123' },
-    { id: 2, name: 'Song B', artist: 'Artist B', album: 'Album B', uri: 'spotify:track:456' },
-    { id: 3, name: 'Song C', artist: 'Artist C', album: 'Album C', uri: 'spotify:track:789' },
-  ]);
-
+  const [searchResults, setSearchResults] = useState([]);
   const [playlistName, setPlaylistName] = useState('New Playlist');
      // eslint-disable-next-line
-  const [playlistTracks, setPlaylistTracks] = useState([
-    { id: 4, name: 'Song D', artist: 'Artist D', album: 'Album D', uri: 'spotify:track:101' },
-    { id: 5, name: 'Song E', artist: 'Artist E', album: 'Album E', uri: 'spotify:track:202' },
-  ]);
+  const [playlistTracks, setPlaylistTracks] = useState([]);
 
   const savePlaylist = () => {
-    // Extract the URIs from the playlistTracks
     const trackUris = playlistTracks.map((track) => track.uri);
-    console.log('Saving playlist to Spotify:', playlistName, trackUris);
-
-    // Reset the playlist
-    setPlaylistName('New Playlist');
-    setPlaylistTracks([]);
+  
+    Spotify.savePlaylist(playlistName, trackUris)
+      .then(() => {
+        setPlaylistName('New Playlist');
+        setPlaylistTracks([]);
+        console.log('Playlist saved to Spotify!');
+      })
+      .catch((error) => {
+        console.error('Failed to save playlist:', error);
+      });
   };
+
 
   // Method to add a track to the playlist
   const addTrack = (track) => {
