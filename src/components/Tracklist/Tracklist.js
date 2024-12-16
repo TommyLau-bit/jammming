@@ -3,7 +3,8 @@ import React from 'react';
 import './Tracklist.css';
 import Track from '../Track/Track';
 
-function Tracklist({tracks, onAdd, isRemoval}) {
+function Tracklist({tracks, onAdd, onRemove, isRemoval}) {
+    console.log('Tracks in Tracklist:', tracks);
   return (
     <div className="Tracklist">
         {tracks.map(track => (
@@ -13,6 +14,7 @@ function Tracklist({tracks, onAdd, isRemoval}) {
              artist={track.artist} 
              album={track.album} 
              onAdd={onAdd}
+             onRemove={onRemove}
              isRemoval={isRemoval}/>
         ))}
     </div>

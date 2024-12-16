@@ -1,0 +1,59 @@
+/* src/components/Track/Track.css */
+
+.Track {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #282828, #121212); /* Spotify dark gradient */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle depth */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+    color: #fff; /* White text for contrast */
+  }
+  
+  .Track:hover {
+    background-color: #1db954; /* Spotify green on hover */
+    transform: scale(1.02); /* Slight enlargement for interactivity */
+  }
+  
+  .Track-information {
+    text-align: left;
+    flex-grow: 1; /* Ensure text takes up remaining space */
+    padding-right: 10px;
+  }
+  
+  .Track-information h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Truncate long titles */
+  }
+  
+  .Track-information p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #ccc; /* Softer text for artist and album info */
+  }
+  
+  .Track button {
+    padding: 8px 15px;
+    border: none;
+    background-color: transparent; /* Transparent button background */
+    color: #1db954; /* Spotify green for button text */
+    border: 2px solid #1db954;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .Track button:hover {
+    background-color: #1db954; /* Green fill on hover */
+    color: #fff; /* White text on hover */
+    transform: scale(1.05); /* Slight enlargement */
+  }

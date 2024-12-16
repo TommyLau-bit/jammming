@@ -1,0 +1,33 @@
+/* src/components/SearchResults/SearchResults.css */
+
+.SearchResults {
+    flex: 1;
+    background-color: #181818; /* Spotify dark gray */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+    border-radius: 10px; /* Rounded corners for modern look */
+    padding: 20px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5); /* Depth effect */
+    color: #fff; /* Ensure text is visible */
+    max-height: 70vh; /* Prevent overflow */
+    overflow-y: auto; /* Enable scrolling for long content */
+    transition: transform 0.2s ease, background-color 0.3s ease; /* Smooth hover animations */
+  }
+  
+  .SearchResults:hover {
+    transform: scale(1.02); /* Slight enlargement on hover */
+    background-color: #212121; /* Subtle hover effect */
+  }
+  
+  /* Scrollbar styling */
+  .SearchResults::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .SearchResults::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+  }
+  
+  .SearchResults::-webkit-scrollbar-thumb:hover {
+    background-color: #1db954; /* Green hover effect */
+  }

@@ -87,6 +87,12 @@ getUserId() {
   },
   // Add tracks to a playlist
   addTracksToPlaylist(playlistId, trackUris) {
+    if (!trackUris || trackUris.length === 0) {
+        console.error('No track URIs provided to add to the playlist');
+        return Promise.reject('Track URIs array is empty');
+      }
+    
+      console.log('Adding these track URIs:', trackUris); // Debugging line
     const token = this.getAccessToken();
 
     return fetch(`https://api.spotify.com/v1/playlists/${playlistId}/tracks`, {

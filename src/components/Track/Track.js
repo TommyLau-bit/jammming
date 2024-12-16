@@ -9,8 +9,9 @@ function Track({id, name, artist, album, onAdd, onRemove, isRemoval}) {
         }
       };
       const handleRemove = () => {
+        console.log('Removing track with id:', id); // Debugging
         if (onRemove) {
-          onRemove(id);
+          onRemove(id, name, artist, album);
         }
       };
 
@@ -21,9 +22,9 @@ function Track({id, name, artist, album, onAdd, onRemove, isRemoval}) {
         <p>{artist} | {album}</p>
       </div>
       {isRemoval ? (
-        <button onClick={handleRemove}>-</button> // Remove button
+        <button className="Track-action" onClick={handleRemove}>-</button> // Remove button
       ) : (
-        <button onClick={handleAdd}>+</button> // Add button
+        <button className="Track-action" onClick={handleAdd}>+</button> // Add button
       )}
     </div>
   );

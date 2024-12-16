@@ -1,38 +1,44 @@
+/* src/components/App/App.css */
+
 .App {
   text-align: center;
+  font-family: 'Circular', 'Arial', sans-serif; /* Spotify's primary font */
+  background: linear-gradient(135deg, #121212, #181818, #282828); /* Dark Spotify-inspired gradient */
+  min-height: 100vh; /* Full viewport height */
+  color: #ffffff; /* Bright text for contrast */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-size: 3.5rem;
+  margin: 20px 0;
+  color: #1db954; /* Spotify green */
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.8); /* Bold shadow for modern look */
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App-content {
+  margin: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App-main {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items at the top */
+  gap: 30px; /* Add spacing between columns */
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto; /* Center content */
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Responsive Design */
+@media (max-width: 768px) {
+  .App-main {
+    flex-direction: column;
+    gap: 20px; /* Reduced gap for smaller screens */
   }
-  to {
-    transform: rotate(360deg);
+
+  h1 {
+    font-size: 2.5rem; /* Adjust title size */
   }
 }

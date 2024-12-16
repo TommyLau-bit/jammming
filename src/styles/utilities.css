@@ -1,0 +1,24 @@
+/* src/styles/utilities.css */
+
+button {
+    background-color: #1db954; /* Spotify green */
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px; /* Fully rounded buttons for Spotify aesthetic */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Depth effect for buttons */
+  }
+  
+  button:hover {
+    background-color: #14833b; /* Slightly darker green on hover */
+    transform: scale(1.05); /* Slight hover enlargement */
+  }
+  
+  button:active {
+    background-color: #0f5f29; /* Darker green on click */
+    transform: scale(0.95); /* Shrink slightly when pressed */
+  }

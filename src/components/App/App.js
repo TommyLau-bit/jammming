@@ -1,6 +1,7 @@
 // src/components/App/App.js
 import React, { useState } from 'react'; // Added useState import
 import './App.css';
+import '../../styles/utilities.css';
 import SearchBar from '../SearchBar/SearchBar';
 import Spotify from '../../utilities/Spotify'; // Import Spotify module
 import SearchResults from '../SearchResults/SearchResults';
@@ -14,7 +15,14 @@ function App() {
   const [playlistTracks, setPlaylistTracks] = useState([]);
 
   const savePlaylist = () => {
+    if (!playlistTracks || playlistTracks.length === 0) {
+      console.error('No tracks in the playlist to save.');
+      return;
+    }
+  
     const trackUris = playlistTracks.map((track) => track.uri);
+  
+    console.log('Track URIs to save:', trackUris); // Debugging line
   
     Spotify.savePlaylist(playlistName, trackUris)
       .then(() => {
@@ -40,14 +48,16 @@ function App() {
 
   // Method to remove a track from the playlist
   const removeTrack = (trackId) => {
-    setPlaylistTracks((prevTracks) =>
-      prevTracks.filter((track) => track.id !== trackId)
-      );
-    };
+    setPlaylistTracks((prevTracks) => {
+      const updatedTracks = prevTracks.filter((track) => track.id !== trackId);
+      console.log('Updated playlistTracks:', updatedTracks);
+      return updatedTracks;
+    });
+  };
 
     const search = (term) => {
-      // Use the Spotify module to perform a search
-      Spotify.search(term).then((results) => setSearchResults(results));
+      // Update: Convert term to lowercase for case-insensitive search
+      Spotify.search(term.toLowerCase()).then((results) => setSearchResults(results));
     };
 
   return (

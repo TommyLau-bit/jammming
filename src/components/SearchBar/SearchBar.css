@@ -1,0 +1,48 @@
+/* src/components/SearchBar/SearchBar.css */
+
+.SearchBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Adds a gap between the input field and the button */
+    margin-bottom: 20px; /* Adds spacing below the search bar */
+  }
+  
+  .SearchBar input {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    background-color: #121212; /* Dark background */
+    color: #fff; /* White text */
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .SearchBar input:focus {
+    outline: none;
+    border-color: #1db954; /* Spotify green border on focus */
+    box-shadow: 0 0 8px rgba(29, 185, 84, 0.7); /* Glow effect */
+  }
+  
+  .SearchBar button {
+    background-color: #1db954; /* Spotify green */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .SearchBar button:hover {
+    background-color: #14833b; /* Darker green on hover */
+    transform: scale(1.05); /* Slight enlargement on hover */
+  }
+  
+  .SearchBar button:active {
+    background-color: #0f5f29; /* Darkest green on click */
+    transform: scale(0.95); /* Shrink slightly to mimic press effect */
+  }
