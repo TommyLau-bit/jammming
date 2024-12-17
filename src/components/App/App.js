@@ -53,10 +53,19 @@ function App() {
     });
   };
 
-    const search = (term) => {
-      // Update: Convert term to lowercase for case-insensitive search
-      Spotify.search(term.toLowerCase()).then((results) => setSearchResults(results));
-    };
+  const search = async (term) => {
+    if (!term) return; // Prevent empty searches
+  
+    console.log('Searching for:', term.toLowerCase()); // Debugging step
+  
+    try {
+      const results = await Spotify.search(term.toLowerCase()); // Convert term to lowercase
+      console.log('Search results:', results); // Debugging log
+      setSearchResults(results); // Update search results immediately
+    } catch (error) {
+      console.error('Error fetching search results:', error);
+    }
+  };
 
   return (
     <div className="App">
