@@ -88,13 +88,24 @@ getUserId() {
   // Add tracks to a playlist
   addTracksToPlaylist(playlistId, trackUris) {
     if (!trackUris || trackUris.length === 0) {
-        console.error('No track URIs provided to add to the playlist');
-        return Promise.reject('Track URIs array is empty');
-      }
-    
-      console.log('Adding these track URIs:', trackUris); // Debugging line
+      console.error('No track URIs provided to add to the playlist');
+      return Promise.reject('Track URIs array is empty');
+    }
+  
+    console.log('Playlist ID:', playlistId); // Debugging
+    console.log('Track URIs to add:', trackUris); // Debugging
+  
     const token = this.getAccessToken();
-
+  
+    // Ensure all URIs are valid and non-empty
+    const validUris = trackUris.filter(uri => uri && uri.startsWith('spotify:track:'));
+    if (validUris.length === 0) {
+      console.error('No valid URIs found in the trackUris array');
+      return Promise.reject('Track URIs are invalid');
+    }
+  
+    console.log('Valid URIs:', validUris); // Debugging
+  
     return fetch(`https://api.spotify.com/v1/playlists/${playlistId}/tracks`, {
       method: 'POST',
       headers: {
@@ -102,17 +113,23 @@ getUserId() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        uris: trackUris,
+        uris: validUris, // Use the filtered valid URIs
       }),
     })
       .then((response) => {
         if (!response.ok) {
+          console.error(`Error response body: ${response.statusText}`); // Debugging
           throw new Error(`Failed to add tracks to playlist: ${response.status}`);
         }
         return response.json();
       })
+      .then((data) => {
+        console.log('Tracks successfully added to playlist:', data); // Success feedback
+        return data;
+      })
       .catch((error) => {
         console.error('Error adding tracks to playlist:', error);
+        return Promise.reject(error);
       });
   },
   // Save playlist by combining the above methods
@@ -162,19 +179,24 @@ getUserId() {
         return response.json();
       })
       .then((jsonResponse) => {
+        console.log('Full Spotify Search Response:', jsonResponse); // Debugging step
+
         if (!jsonResponse.tracks) {
           return [];
         }
 
         // Map tracks to the required format
-        return jsonResponse.tracks.items.map((track) => ({
-          id: track.id,
-          name: track.name,
-          artist: track.artists[0].name,
-          album: track.album.name,
-          uri: track.uri,
-        }));
-      })
+        return jsonResponse.tracks.items.map((track) => {
+            console.log('Track Object:', track); // Log each track to confirm its properties
+            return {
+              id: track.id,
+              name: track.name,
+              artist: track.artists[0].name,
+              album: track.album.name,
+              uri: track.uri,
+            };
+          });
+        })
       .catch((error) => {
         console.error('Error fetching data from Spotify:', error);
         return [];

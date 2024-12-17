@@ -15,15 +15,13 @@ function App() {
   const [playlistTracks, setPlaylistTracks] = useState([]);
 
   const savePlaylist = () => {
-    if (!playlistTracks || playlistTracks.length === 0) {
-      console.error('No tracks in the playlist to save.');
+    const trackUris = playlistTracks.map((track) => track.uri);
+    console.log('Track URIs to save:', trackUris); // Debugging line
+
+    if (!trackUris || trackUris.includes(undefined)) {
+      console.error('One or more tracks have invalid URIs.');
       return;
     }
-  
-    const trackUris = playlistTracks.map((track) => track.uri);
-  
-    console.log('Track URIs to save:', trackUris); // Debugging line
-  
     Spotify.savePlaylist(playlistName, trackUris)
       .then(() => {
         setPlaylistName('New Playlist');

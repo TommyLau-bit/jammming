@@ -13,6 +13,7 @@ function Tracklist({tracks, onAdd, onRemove, isRemoval}) {
              name={track.name} 
              artist={track.artist} 
              album={track.album} 
+             uri={track.uri}
              onAdd={onAdd}
              onRemove={onRemove}
              isRemoval={isRemoval}/>

@@ -2,10 +2,10 @@
 import React from 'react';
 import './Track.css';
 
-function Track({id, name, artist, album, onAdd, onRemove, isRemoval}) {
+function Track({id, name, artist, album, uri,  onAdd, onRemove, isRemoval}) {
     const handleAdd = () => {
         if (onAdd) {
-          onAdd({ id, name, artist, album });
+          onAdd({ id, name, artist, album, uri});
         }
       };
       const handleRemove = () => {
