@@ -52,6 +52,71 @@ Use the search bar to find songs by entering keywords like the song name, artist
         •	Click the “Save to Spotify” button.
         •	The playlist will be created in your Spotify account with all selected tracks.
 
+
+## Homepage
+<p align="center">
+  <img src="./assets/Homepage.png" alt="Homepage Screenshot" width="700"/>
+  <br>
+  <i>Figure 1: Homepage - A sleek and minimalist interface introduces users to the Jammming app.</i>
+</p>
+
+---
+
+## Spotify Login Redirect
+<p align="center">
+  <img src="./assets/Login.png" alt="Spotify Login Screenshot" width="700"/>
+  <br>
+  <i>Figure 2: Spotify Login Redirect - Users are prompted to log into their Spotify account to authorize playlist access and saving.</i>
+</p>
+
+---
+
+## Search Bar Glow Effect
+<p align="center">
+  <img src="./assets/searchBar.png" alt="Search Bar Glow Screenshot" width="700"/>
+  <br>
+  <i>Figure 3: Search Bar Glow Effect - A vibrant green highlight appears when the search bar is focused.</i>
+</p>
+
+---
+
+## Search Results and Add Songs to Playlist
+<p align="center">
+  <img src="./assets/searchResults-1.png" alt="Search Results Screenshot" width="700"/>
+  <br>
+  <i>Figure 4: Search Results - Perform a search for songs, albums, or artists and add desired tracks to a custom playlist with a single click.</i>
+</p>
+
+---
+
+## Search Results Scrolling with Sidebar
+<p align="center">
+  <img src="./assets/searchResults-2.png" alt="Search Results Scrolling Screenshot" width="700"/>
+  <br>
+  <i>Figure 5: Scrollable Search Results - Easily browse through large lists of search results using the scrollable sidebar.</i>
+</p>
+
+---
+
+## Playlist Management
+<p align="center">
+  <img src="./assets/Playlist.png" alt="Playlist Management Screenshot" width="700"/>
+  <br>
+  <i>Figure 6: Playlist Management - Customize the playlist name, view added tracks, remove songs, and save the playlist to Spotify.</i>
+</p>
+
+---
+
+## Saved Playlist on Spotify
+<p align="center">
+  <img src="./assets/Spotify.png" alt="Saved Playlist Screenshot" width="700"/>
+  <br>
+  <i>Figure 7: Saved Playlist - The custom playlist successfully saved and visible in the user's Spotify account.</i>
+</p>
+
+
+
+
 Author 👤
 
 Tommy Lau
