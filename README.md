@@ -32,7 +32,8 @@ The project uses the following technologies:
 
 # Setup Instructions 🔧
 
-To run Jammming on your local machine:
+## To run Jammming on your local machine:
+
 	1.	Clone the repository: git clone https://github.com/TommyLau-bit/jammming.git
     cd jammming
 	2.	Install dependencies: npm install
