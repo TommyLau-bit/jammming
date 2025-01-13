@@ -55,7 +55,7 @@ Use the search bar to find songs by entering keywords like the song name, artist
 
 ## Homepage
 <p align="center">
-  <img src="./assets/Homepage.png" alt="Homepage Screenshot" width="700"/>
+  <img src="./assets/HomePage.png" alt="Homepage Screenshot" width="700"/>
   <br>
   <i>Figure 1: Homepage - A sleek and minimalist interface introduces users to the Jammming app.</i>
 </p>
