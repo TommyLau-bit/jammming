@@ -125,6 +125,7 @@ The project uses the following technologies:
 </p>
 
 
+---
 
 
 Author 👤
